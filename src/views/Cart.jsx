@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FilmShop } from "../components/FilmShop";
 import { NoFilms } from "../components/NoFilms";
+import { FilmContext } from "../contexts/FilmContext";
 
 export function Cart() {
+  const { selectedFilm } = useContext(FilmContext);
+
   return (
     <>
-      <NoFilms />
-      {/* <FilmShop /> */}
+      {selectedFilm.length > 0 ? (
+        <>
+          <FilmShop />
+        </>
+      ) : (
+        <>
+          <NoFilms />
+        </>
+      )}
     </>
   );
 }

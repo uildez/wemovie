@@ -6,9 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "json-server server.json -w --port 8000"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "material-icons": "^1.11.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
