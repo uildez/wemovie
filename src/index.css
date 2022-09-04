@@ -15,26 +15,10 @@
   -webkit-text-size-adjust: 100%;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
 }
 
 ::-webkit-scrollbar {
@@ -61,4 +45,32 @@ h1 {
 
 .section::-webkit-scrollbar-thumb {
   background-color: #d4aa70;
+}
+
+#table {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow-y: scroll;
+}
+
+@layer components {
+  .div-wrap {
+    @apply bg-white flex flex-col items-center m-auto justify-center gap-8 w-full h-4/5 rounded;
+  }
+  .btn {
+    @apply flex bg-[#009EDD] text-white hover:scale-105 hover:shadow-2xl px-8 py-4 w-full justify-between items-center gap-2 rounded transition-all;
+  }
+  .text-btn{
+    @apply uppercase text-base text-white;
+  }
+  .text-table{
+    @apply text-[#999] text-base uppercase text-left;
+  }
+  .text-title{
+    @apply font-bold text-xl text-[#2F2E41];
+  }
+  .icon{
+    @apply cursor-pointer text-[#009EDD] hover:text-black transition-all;
+  }
 }

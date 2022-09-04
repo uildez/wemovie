@@ -1,16 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 
-import {api} from "../services/api"
 import { CardFilm } from "../components/CardFilm";
+import { FilmContext } from "../contexts/FilmContext";
 
 export function Home() {
-    const [film, setFilm] = useState([]);
-
-    useEffect(() => {
-      api.get("/products").then((response) => {
-        setFilm((response.data))
-      })
-    }, [])
+  const { film } = useContext(FilmContext);
     
   return (
     <div className="grid grid-cols-3 m-auto justify-between gap-4 w-full max-h-[80%] overflow-auto pr-4">
